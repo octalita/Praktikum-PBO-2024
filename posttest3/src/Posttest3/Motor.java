@@ -3,37 +3,19 @@ package Posttest3;
 public class Motor extends kendaraan  {
 
     // Private members
-    private String nama, merek, warna;
-    private int harga, cc, tahun;
+    private String warna;
+    private int cc;
 
     // Constructor
-    public Motor(String jenis_kendaraan, String nama, String merek, String warna, int harga, int cc, int tahun) {
-        super(jenis_kendaraan);
-        this.nama = nama;
-        this.merek = merek;
+    public Motor( String nama,String merek,String warna,int harga,int tahun, int cc ) {
+        super(nama, merek, harga, tahun);
         this.warna = warna;
-        this.harga = harga;
         this.cc = cc;
-        this.tahun = tahun;
+        
     }
 
     // Getters and Setters
  
-    public void setNama(String nama) {
-        this.nama = nama;
-    }
-
-    public String getNama() {
-        return nama;
-    }
-
-    public void setMerek(String merek) {
-        this.merek = merek;
-    }
-
-    public String getMerek() {
-        return this.merek;
-    }
 
     public String getWarna() {
         return this.warna;
@@ -43,13 +25,7 @@ public class Motor extends kendaraan  {
         this.warna = warna;
     }
 
-    public int getHarga() {
-        return this.harga;
-    }
-
-    public void setHarga(int harga) {
-        this.harga = harga;
-    }
+   
 
     public int getCc() {
         return this.cc;
@@ -59,23 +35,17 @@ public class Motor extends kendaraan  {
         this.cc = cc;
     }
 
-    public int getTahun() {
-        return this.tahun;
-    }
 
-    public void setTahun(int tahun) {
-        this.tahun = tahun;
-    }
 
     // Default access modifier (package-private)
     void tampil() {
-        System.out.println("Jenis Kendaraan : " + super.getjenis_kendaraan());
-        System.out.println("Nama : " + this.nama);
-        System.out.println("Merek : " + this.merek);
+        
+        System.out.println("Nama : " + super.getnama());
+        System.out.println("Merek : " + super.getmerek());
         System.out.println("Warna : " + this.warna);
-        System.out.println("Harga : " + this.harga);
+        System.out.println("Harga : " + super.getharga());
         System.out.println("CC : " + this.cc);
-        System.out.println("Tahun: " + this.tahun);
+        System.out.println("Tahun: " + super.gettahun());
     }
 
     // Public access modifier

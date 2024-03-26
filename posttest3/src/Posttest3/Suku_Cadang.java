@@ -2,37 +2,20 @@ package Posttest3;
 
 public class Suku_Cadang extends kendaraan {
 
-    private String namasukucadang, mereksukucadang, model;
-    private int hargasukucadang, jumlah, tahunsukucadang;
+    private String  model;
+    private int jumlah;
 
-    public Suku_Cadang(String jenis_kendaraan, String namasukucadang, String mereksukucadang, String model, int hargasukucadang, int jumlah,
-            int tahunsukucadang) {
-        super(jenis_kendaraan);
-        this.namasukucadang = namasukucadang;
-        this.mereksukucadang = mereksukucadang;
+    public Suku_Cadang( String nama, String merek, String model, int harga, int jumlah,
+            int tahun) {
+        super(nama, merek, harga, tahun);
         this.model = model;
-        this.hargasukucadang = hargasukucadang;
         this.jumlah = jumlah;
-        this.tahunsukucadang = tahunsukucadang;
+        
     }
 
     // Getter dan setter
 
-    public String getNamasukucadang() {
-        return namasukucadang;
-    }
-
-    public void setNamasukucadang(String namasukucadang) {
-        this.namasukucadang = namasukucadang;
-    }
-
-    public String getMereksukucadang() {
-        return mereksukucadang;
-    }
-
-    public void setMereksukucadang(String mereksukucadang) {
-        this.mereksukucadang = mereksukucadang;
-    }
+   
 
     public String getModel() {
         return model;
@@ -42,14 +25,7 @@ public class Suku_Cadang extends kendaraan {
         this.model = model;
     }
 
-    public int getHargasukucadang() {
-        return hargasukucadang;
-    }
-
-    public void setHargasukucadang(int hargasukucadang) {
-        this.hargasukucadang = hargasukucadang;
-    }
-
+   
     public int getJumlah() {
         return jumlah;
     }
@@ -58,22 +34,17 @@ public class Suku_Cadang extends kendaraan {
         this.jumlah = jumlah;
     }
 
-    public int getTahunsukucadang() {
-        return tahunsukucadang;
-    }
-
-    public void setTahunsukucadang(int tahunsukucadang) {
-        this.tahunsukucadang = tahunsukucadang;
-    }
+  
+ 
 
     void tampil() {
-        System.out.println("Jenis Kendaraan : " + super.getjenis_kendaraan());
-        System.out.println("Nama : " + this.namasukucadang);
-        System.out.println("Merek : " + this.mereksukucadang);
+    
+        System.out.println("Nama : " + super.getnama());
+        System.out.println("Merek : " + super.getmerek());
         System.out.println("Model : " + this.model);
-        System.out.println("Harga : " + this.hargasukucadang);
+        System.out.println("Harga : " + super.getharga());
         System.out.println("Jumlah: " + this.jumlah);
-        System.out.println("Tahun: " + this.tahunsukucadang);
+        System.out.println("Tahun: " + super.gettahun());
     }
 
    

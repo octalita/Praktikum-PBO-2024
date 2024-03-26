@@ -2,20 +2,56 @@ package Posttest3;
 
 
 public class kendaraan {
-    String jenis_kendaraan ;
+    String   nama, merek  ;
+    int harga, tahun ;
 
-    public kendaraan(String jenis_kendaraan) {
-        this.jenis_kendaraan = jenis_kendaraan;
+    public kendaraan (String nama, String merek, int harga, int tahun ) {
+        this.nama = nama;
+        this.merek = merek;
+        this.harga = harga;
+        this.tahun = tahun;
+        
+      
         
     }
 
-    public String getjenis_kendaraan() {
-        return jenis_kendaraan;
+    public String getnama() {
+        return nama;
     }
 
-    public void setjenis_kendaraan(String jenis_kendaraan) {
-        this.jenis_kendaraan = jenis_kendaraan;
+    public void setnama(String nama) {
+        this.nama  = nama;
    
 }  
+    public String getmerek() {
+        return merek;
+    }
+
+    public void setmerek(String merek) {
+        this.merek  = merek;
+   
+}  
+    public int getharga() {
+        return harga;
+    }
+
+    public void setharga(int harga) {
+        this.harga  = harga;
+   
+}  
+    public int gettahun() {
+        return tahun;
+    }
+
+    public void settahun(int tahun) {
+        this.tahun  = tahun;
+   
+}  
+
+
+
+
+
+
 
 }

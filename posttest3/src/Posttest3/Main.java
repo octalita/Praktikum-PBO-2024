@@ -32,7 +32,7 @@ public class Main {
                     9. Keluar
                         """);
 
-            System.out.print("Input :");
+            System.out.print("Input : ");
             int menu;
             try {
                 menu = Integer.parseInt(br.readLine());
@@ -43,17 +43,6 @@ public class Main {
 
             switch (menu) {
                 case 1:
-                    String jenis_kendaraan;
-                    do {
-                        System.out.print("Masukkan Jenis Kendaraan : ");
-                        jenis_kendaraan = br.readLine();
-                        if (jenis_kendaraan.isEmpty()) {
-                            System.out.println("Jenis Kendaraan tidak boleh kosong.");
-                        } else if (jenis_kendaraan.matches("[0-9]+")) {
-                            System.out.println("Jenis Kendaraan tidak boleh berupa angka.");
-                        }
-                    } while (jenis_kendaraan.isEmpty() || jenis_kendaraan.matches("[0-9]+"));
-
                     String nama;
                     do {
                         System.out.print("Masukkan Nama Motor : ");
@@ -120,7 +109,7 @@ public class Main {
                         }
                     } while (true);
 
-                    Motor mtrBaru = new Motor(jenis_kendaraan , nama, merek, warna, harga, cc, tahun);
+                    Motor mtrBaru = new Motor(nama, merek, warna, harga, cc, tahun);
                     dataMotor.add(mtrBaru);
                     break;
 
@@ -142,17 +131,6 @@ public class Main {
                     int ubah = Integer.parseInt(br.readLine()) - 1;
 
                     if (ubah <= dataMotor.size()) {
-                        String Newsetjenis_kendaraan;
-                        do {
-                            System.out.print("Masukkan Jenis Kendaraan : ");
-                            Newsetjenis_kendaraan= br.readLine();
-                            if (Newsetjenis_kendaraan.isEmpty()) {
-                                System.out.println("Jenis Kendaraan tidak boleh kosong.");
-                            } else if (Newsetjenis_kendaraan.matches("[0-9]+")) {
-                                System.out.println("Jenis Kendaraan  tidak boleh berupa angka.");
-                            }
-                        } while (Newsetjenis_kendaraan.isEmpty() || Newsetjenis_kendaraan.matches("[0-9]+"));
-
                         String Newsetnama;
                         do {
                             System.out.print("Masukkan Nama Baru Motor : ");
@@ -219,13 +197,13 @@ public class Main {
                             }
                         } while (true);
 
-                        kendaraan.get(ubah).setjenis_kendaraan(Newsetjenis_kendaraan);
-                        dataMotor.get(ubah).setNama(Newsetnama);
-                        dataMotor.get(ubah).setMerek(Newsetmerek);
+                     
+                        dataMotor.get(ubah).setnama(Newsetnama);
+                        dataMotor.get(ubah).setmerek(Newsetmerek);
                         dataMotor.get(ubah).setWarna(Newsetwarna);
-                        dataMotor.get(ubah).setHarga(Newsetharga);
+                        dataMotor.get(ubah).setharga(Newsetharga);
                         dataMotor.get(ubah).setCc(Newsetcc);
-                        dataMotor.get(ubah).setTahun(Newsettahun);
+                        dataMotor.get(ubah).settahun(Newsettahun);
                         ;
                     } else {
                         System.out.println("Nomor yang anda masukkan tidak ada");
@@ -244,45 +222,35 @@ public class Main {
                     // Periksa apakah indeks hapus berada dalam batas aman array
                     if (hapusIndex >= 0 && hapusIndex < dataMotor.size()) {
                         dataMotor.remove(hapusIndex);
-                        System.out.println("Motor berhasil dihapus.");
+                        System.out.println(" Data Motor berhasil dihapus.");
                     } else {
                         System.out.println("Input yang anda masukkan tidak ada");
                     }
                     break;
 
                     case 5:
-                    String jenis_Kendaraan;
-                    do {
-                        System.out.print("Masukkan Jenis Kendaraan : ");
-                        jenis_kendaraan = br.readLine();
-                        if (jenis_kendaraan.isEmpty()) {
-                            System.out.println("Jenis Kendaraan  tidak boleh kosong.");
-                        } else if (jenis_kendaraan.matches("[0-9]+")) {
-                            System.out.println("Jenis Kendaraaan tidak boleh berupa angka.");
-                        }
-                    } while (jenis_kendaraan.isEmpty() || jenis_kendaraan.matches("[0-9]+"));
-
-                    String namasukucadang;
+                   
+                    String Nama;
                     do {
                         System.out.print("Masukkan Nama Suku Cadang : ");
-                        namasukucadang = br.readLine();
-                        if (namasukucadang.isEmpty()) {
+                        nama = br.readLine();
+                        if (nama.isEmpty()) {
                             System.out.println("Nama Suku Cadang tidak boleh kosong.");
-                        } else if (namasukucadang.matches("[0-9]+")) {
+                        } else if (nama.matches("[0-9]+")) {
                             System.out.println("Nama Suku Cadang tidak boleh berupa angka.");
                         }
-                    } while (namasukucadang.isEmpty() || namasukucadang.matches("[0-9]+"));
+                    } while (nama.isEmpty() || nama.matches("[0-9]+"));
 
-                    String mereksukucadang;
+                    String Merek;
                     do {
                         System.out.print("Masukkan Merek Suku Cadang : ");
-                        mereksukucadang = br.readLine();
-                        if (mereksukucadang.isEmpty()) {
+                        merek = br.readLine();
+                        if (merek.isEmpty()) {
                             System.out.println("Merek Suku Cadang tidak boleh kosong.");
-                        } else if (mereksukucadang.matches("[0-9]+")) {
+                        } else if (merek.matches("[0-9]+")) {
                             System.out.println("Merek Suku Cadang tidak boleh berupa angka.");
                         }
-                    } while (mereksukucadang.isEmpty() || mereksukucadang.matches("[0-9]+"));
+                    } while (merek.isEmpty() || merek.matches("[0-9]+"));
 
                     String model;
                     do {
@@ -295,11 +263,11 @@ public class Main {
                         }
                     } while (model.isEmpty() || model.matches("[0-9]+"));
 
-                    int hargasukucadang;
+                    int Harga;
                     do {
                         try {
                             System.out.print("Masukkan Harga Suku Cadang : ");
-                            hargasukucadang = Integer.parseInt(br.readLine());
+                            harga= Integer.parseInt(br.readLine());
                             break;
                         } catch (NumberFormatException e) {
                             System.out.println("input salah!!. Input harus berupa angka.");
@@ -317,18 +285,18 @@ public class Main {
                         }
                     } while (true);
 
-                    int tahunsukucadang;
+                    int Tahun;
                     do {
                         try {
                             System.out.print("Masukkan Tahun Suku Cadang : ");
-                            tahunsukucadang = Integer.parseInt(br.readLine());
+                            tahun = Integer.parseInt(br.readLine());
                             break;
                         } catch (NumberFormatException e) {
                             System.out.println("input salah!!. Input harus berupa angka.");
                         }
                     } while (true);
 
-                    Suku_Cadang scBaru = new Suku_Cadang(jenis_kendaraan,namasukucadang, mereksukucadang, model, hargasukucadang, jumlah, tahunsukucadang);
+                    Suku_Cadang scBaru = new Suku_Cadang(nama, merek, model, harga, jumlah, tahun);
                     dataSuku_Cadang.add(scBaru);
                     break;
 
@@ -350,38 +318,28 @@ public class Main {
                 int Ubah = Integer.parseInt(br.readLine()) - 1;
 
                 if (Ubah <= dataSuku_Cadang.size()) {
-                    String Newsetjenis_kendaraan;
+            
+                    String Newsetnama;
                     do {
                         System.out.print("Masukkan Nama Baru Suku Cadang : ");
-                        Newsetjenis_kendaraan = br.readLine();
-                        if (Newsetjenis_kendaraan.isEmpty()) {
-                            System.out.println("Nama Baru Motor tidak boleh kosong.");
-                        } else if (Newsetjenis_kendaraan.matches("[0-9]+")) {
+                        Newsetnama = br.readLine();
+                        if (Newsetnama.isEmpty()) {
+                            System.out.println("Nama Baru Suku Cadang tidak boleh kosong.");
+                        } else if (Newsetnama.matches("[0-9]+")) {
                             System.out.println("Nama Baru Motor tidak boleh berupa angka.");
                         }
-                    } while (Newsetjenis_kendaraan.isEmpty() || Newsetjenis_kendaraan.matches("[0-9]+"));
+                    } while (Newsetnama.isEmpty() || Newsetnama.matches("[0-9]+"));
 
-                    String Newsetnamasukucadang;
-                    do {
-                        System.out.print("Masukkan Nama Baru Suku Cadang : ");
-                        Newsetnamasukucadang = br.readLine();
-                        if (Newsetnamasukucadang.isEmpty()) {
-                            System.out.println("Nama Baru Motor tidak boleh kosong.");
-                        } else if (Newsetnamasukucadang.matches("[0-9]+")) {
-                            System.out.println("Nama Baru Motor tidak boleh berupa angka.");
-                        }
-                    } while (Newsetnamasukucadang.isEmpty() || Newsetnamasukucadang.matches("[0-9]+"));
-
-                    String Newsetmereksukucadang;
+                    String Newsetmerek;
                     do {
                         System.out.print("Masukkan Merek Baru Suku Cadang : ");
-                        Newsetmereksukucadang = br.readLine();
-                        if (Newsetmereksukucadang.isEmpty()) {
+                        Newsetmerek = br.readLine();
+                        if (Newsetmerek.isEmpty()) {
                             System.out.println("Merek Baru Suku Cadang tidak boleh kosong.");
-                        } else if (Newsetmereksukucadang.matches("[0-9]+")) {
+                        } else if (Newsetmerek.matches("[0-9]+")) {
                             System.out.println("Merek Baru Motor tidak boleh berupa angka.");
                         }
-                    } while (Newsetmereksukucadang.isEmpty() || Newsetmereksukucadang.matches("[0-9]+"));
+                    } while (Newsetmerek.isEmpty() || Newsetmerek.matches("[0-9]+"));
 
                     String Newsetmodel;
                     do {
@@ -394,11 +352,11 @@ public class Main {
                         }
                     } while (Newsetmodel.isEmpty() || Newsetmodel.matches("[0-9]+"));
 
-                    int Newsethargasukucadang;
+                    int Newsetharga;
                     do {
                         try {
                             System.out.print("Masukkan Harga Suku Cadang Baru: ");
-                            Newsethargasukucadang = Integer.parseInt(br.readLine());
+                            Newsetharga = Integer.parseInt(br.readLine());
                             break;
                         } catch (NumberFormatException e) {
                             System.out.println("input salah!!. Input harus berupa angka.");
@@ -416,24 +374,24 @@ public class Main {
                         }
                     } while (true);
 
-                    int Newsettahunsukucadang;
+                    int Newsettahun;
                     do {
                         try {
                             System.out.print("Masukkan Tahun Suku Cadang Baru : ");
-                            Newsettahunsukucadang = Integer.parseInt(br.readLine());
+                            Newsettahun= Integer.parseInt(br.readLine());
                             break;
                         } catch (NumberFormatException e) {
                             System.out.println("input salah!!. Input harus berupa angka.");
                         }
                     } while (true);
 
-                    kendaraan.get(Ubah).setjenis_kendaraan(Newsetjenis_kendaraan);
-                    dataSuku_Cadang.get(Ubah).setNamasukucadang(Newsetnamasukucadang);
-                    dataSuku_Cadang.get(Ubah).setMereksukucadang(Newsetmereksukucadang);
+                
+                    dataSuku_Cadang.get(Ubah).setnama(Newsetnama);
+                    dataSuku_Cadang.get(Ubah).setmerek(Newsetmerek);
                     dataSuku_Cadang.get(Ubah).setModel(Newsetmodel);
-                    dataSuku_Cadang.get(Ubah).setHargasukucadang(Newsethargasukucadang);
+                    dataSuku_Cadang.get(Ubah).setharga(Newsetharga);
                     dataSuku_Cadang.get(Ubah).setJumlah(Newsetjumlah);
-                    dataSuku_Cadang.get(Ubah).setTahunsukucadang(Newsettahunsukucadang);
+                    dataSuku_Cadang.get(Ubah).settahun(Newsettahun);
                     ;
                 } else {
                     System.out.println("Nomor yang anda masukkan tidak ada");
@@ -454,7 +412,7 @@ public class Main {
                     // Periksa apakah indeks hapus berada dalam batas aman array
                     if (HapusIndex >= 0 && HapusIndex < dataSuku_Cadang.size()) {
                         dataMotor.remove(HapusIndex);
-                        System.out.println("Suku Cadang berhasil dihapus.");
+                        System.out.println(" Data Suku Cadang berhasil dihapus.");
                     } else {
                         System.out.println("Input yang anda masukkan tidak ada");
                     }
